@@ -2,9 +2,9 @@ export function Footer (){
     return(
         <footer>
             <ul className="footer-list">
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Fitness</li>
+                <li>VIdeos</li>
+                <li>Privacidad</li>
             </ul>
             <ul className="footer-list">
                 <li></li>
