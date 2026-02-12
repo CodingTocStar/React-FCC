@@ -11,7 +11,7 @@ export function Footer (){
                 <li></li>
                 <li></li>
             </ul>
-            <p></p>
+            <p>©</p>
             <ul className="footer-iconos">
                 <li>
                     <a href="#"></a>
