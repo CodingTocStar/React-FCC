@@ -1,26 +1,28 @@
+import '../estilo/footer.css'
+
 export function Footer (){
     return(
         <footer>
             <ul className="footer-list">
-                <li>Fitness</li>
+                <li>Fitness Dashboard</li>
                 <li>VIdeos</li>
                 <li>Privacidad</li>
             </ul>
             <ul className="footer-list">
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Servicios</li>
+                <li>Discord</li>
+                <li>Terminos y condiciones</li>
             </ul>
-            <p>©</p>
+            <p>© 2026 CodingTocStar Footer. All Rights Reserved.</p>
             <ul className="footer-iconos">
                 <li>
-                    <a href="#"></a>
+                    <a href="#">🎮</a>
                 </li>
                 <li>
-                    <a href="#"></a>
+                    <a href="#">🐦</a>
                 </li>
                 <li>
-                    <a href="#"></a>
+                    <a href="#">💻</a>
                 </li>
             </ul>
         </footer>

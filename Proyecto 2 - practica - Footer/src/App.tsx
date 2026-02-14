@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { Footer } from './Componentes/Footer'
 import './App.css'
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
 
   return (
     <>
+      <Footer/>
     </>
   )
 }
