@@ -1,0 +1,36 @@
+#color-picker-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.color-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+#color-input {
+  width: 90px;
+  height: 90px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.hex-value {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
