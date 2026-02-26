@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const OTPGenerator = () => {
     /*USE STATE*/
     const [time, setTime] = useState(5)
-    const [contador, setContador] = useState()
+    const [isActive, setIsActive] = useState(false)
 
     /*USEREF */
     const intervalRef = useRef(null)
@@ -11,48 +11,41 @@ const OTPGenerator = () => {
 
 
     /*  FUNCION SUBMIT */
-
     const handleSubmit = () => {
 
-        if (intervalRef.current != null) return
+        if (isActive) return
 
         setTime(5)
+        setIsActive(true)
 
-        intervalRef.current = setInterval(
-            () => {
-                setTime(prevTime => {
-                    if (prevTime === 1) {
-                        clearInterval(intervalRef.current)
-                        intervalRef.current = null
-                        return 0
-                    }
-                    return prevTime - 1
-                })
-            },
-            1000)
+        intervalRef.current = setInterval(() => {
+            setTime(prev => prev - 1)
+        }, 1000)
     }
 
 
+
+    /*USE EFFECT*/
+    useEffect(() => {
+
+    }, [contador])
+    /*FIN USE EFFECT*/
+
+
+
+
+    return (
+        <div>
+            <h1>OTP Generador</h1>
+            <p>CLickea en el boton para generar tu clave unica</p>
+            <button
+                onClick={handleSubmit}
+                disabled={intervalRef.current != null}>
+                {intervalRef.current ? `Reintentar en ${time}s` : "Generar OTP"}
+            </button>
+        </div>
+    );
+
 }
-
-/*USE EFFECT*/
-useEffect(() => {
-
-}, [contador])
-/*FIN USE EFFECT*/
-
-
-
-
-return (
-    <div>
-        <h1>OTP Generador</h1>
-        <p>CLickea en el boton para generar tu clave unica</p>
-        <button>Generar OTP</button>
-    </div>
-)
-
-};
-
 
 export default OTPGenerator;
