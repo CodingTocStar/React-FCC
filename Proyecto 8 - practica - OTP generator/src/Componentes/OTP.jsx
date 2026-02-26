@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 const OTPGenerator = () => {
     /*USE STATE*/
     const [time, setTime] = useState(5)
     const [isActive, setIsActive] = useState(false)
+    const [otp, setOtp] = useState()
 
     /*USEREF */
     const intervalRef = useRef(null)
@@ -23,12 +24,24 @@ const OTPGenerator = () => {
         }, 1000)
     }
 
+    /*FUNCION OTP RANDOM */
+    const generarOtp = () => {
+        
+    }
 
-
-    /*USE EFFECT*/
+    /*USE EFFECT detiene al llegar a 0*/
     useEffect(() => {
+        if (time === 0 && isActive) {
+            clearInterval(intervalRef.current)
+            intervalRef.current = null
+            setIsActive(false)
+        }
+    }, [time, isActive])
 
-    }, [contador])
+    /*Limpia al desmontar */
+    useEffect(() => {
+        return () => clearInterval(intervalRef.current)
+    }, [])
     /*FIN USE EFFECT*/
 
 
