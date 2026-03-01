@@ -1,5 +1,5 @@
 import './App.css'
-import  OTPGenerator  from './Componentes/OTP'
+import OTPGenerator from './Componentes/OTP'
 
 function App() {
 
